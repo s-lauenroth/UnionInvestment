@@ -1,0 +1,85 @@
+/*
+ * Lead form block
+ * Submit button colour is themeable so MSM live copies can match bank CI
+ * (VR blue+orange) or Union Investment (UI blue+green).
+ */
+
+.lead-form {
+  --lead-form-accent: var(--brand-theme-color, #7ac943);
+  --lead-form-accent-text: var(--brand-light-text-color, #173404);
+  --lead-form-border: #ddd;
+  --lead-form-muted: #666;
+}
+
+.lead-form-heading {
+  font-size: var(--heading-font-size-xs, 22px);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.lead-form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+@media (width <= 600px) {
+  .lead-form-row-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lead-form-form input[type="text"],
+.lead-form-form input[type="email"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid var(--lead-form-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.lead-form-form input:focus-visible {
+  outline: none;
+  border-color: var(--lead-form-accent);
+  box-shadow: 0 0 0 3px rgb(122 201 67 / 25%);
+}
+
+.lead-form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--lead-form-muted);
+  margin: 8px 0 16px;
+  cursor: pointer;
+}
+
+.lead-form-checkbox input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.lead-form-submit {
+  width: 100%;
+  background: var(--lead-form-accent);
+  color: var(--lead-form-accent-text);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.lead-form-submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.lead-form-submit:hover:not(:disabled) {
+  filter: brightness(0.95);
+}

@@ -26,6 +26,7 @@
       "fragment",
       "hero",
       "image",
+      "lead-form",
       "promotion",
       "quote",
       "search",
@@ -35,7 +36,9 @@
       "text",
       "title",
       "title-block",
-      "video"
+      "video",
+      "voucher",
+      "vorteilsrechner"
     ]
   },
   {

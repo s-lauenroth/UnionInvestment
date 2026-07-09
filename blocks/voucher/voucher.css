@@ -1,0 +1,134 @@
+/*
+ * Voucher block
+ * The gift-card visual mirrors the reference dm gift card (bunter Farbverlauf
+ * Gelb → Rosa → Violett → Blau, weißer Skript-Schriftzug, Betrag-Badge oben links,
+ * dm-Branding unten rechts) as a stylisation — the protected logo is not reproduced.
+ */
+
+.voucher {
+  --voucher-border: #eee;
+  --voucher-muted: #666;
+  --voucher-badge-color: #0c447c;
+  --voucher-card-gradient: linear-gradient(135deg, #ffe58a 0%, #f7a8c4 35%, #c6a2e0 60%, #8fc7e8 100%);
+}
+
+/* Pre-submit hint */
+.voucher-hint {
+  background: #fafafa;
+  border: 1px solid var(--voucher-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.voucher-hint p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--voucher-muted);
+}
+
+/* Post-submit two-column layout */
+.voucher-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (width <= 600px) {
+  .voucher-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gift-card visual */
+.voucher-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--voucher-card-gradient);
+  padding: 16px;
+}
+
+.voucher-card-amount {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #fff;
+  color: var(--voucher-badge-color);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.voucher-card-script {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voucher-card-script span {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  color: #fff;
+  font-size: 26px;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+}
+
+.voucher-card-brand {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  text-align: right;
+  color: #fff;
+}
+
+.voucher-card-brand-name {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.voucher-card-brand-tag {
+  font-size: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* Details table */
+.voucher-details h3 {
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.voucher-details-sub {
+  font-size: 13px;
+  color: var(--voucher-muted);
+  margin: 0 0 16px;
+}
+
+.voucher-details table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.voucher-details td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--voucher-border);
+}
+
+.voucher-details-label {
+  color: var(--voucher-muted);
+}
+
+.voucher-details-value {
+  text-align: right;
+  font-weight: 600;
+}
+
+.voucher-details-value.voucher-details-plain {
+  font-weight: 400;
+}
