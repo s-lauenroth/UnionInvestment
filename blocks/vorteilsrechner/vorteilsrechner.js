@@ -83,10 +83,15 @@ async function fetchParams(cfPath) {
     const json = await response.json();
     const item = json?.data?.vorteilsrechnerparameterByPath?.item;
     if (!item) return null;
+    // long-text fields come back as { html, plaintext, markdown, json }; take plaintext.
+    const teaser = item.teaserText;
+    const teaserText = (teaser && typeof teaser === 'object')
+      ? (teaser.plaintext || teaser.html || '')
+      : (teaser || '');
     return {
       baseRate: toNumber(item.baseRate, DEFAULTS.baseRate),
       bonusRate: toNumber(item.bonusRate, DEFAULTS.bonusRate),
-      teaserText: item.teaserText || '',
+      teaserText,
     };
   } catch (error) {
     // eslint-disable-next-line no-console
