@@ -13,7 +13,7 @@ import { getMetadata } from '../../scripts/aem.js';
  * later (AEM-MCP phase); until then the authored/static defaults are used.
  */
 
-const PERSISTED_QUERY = '/graphql/execute.json/unioninvestment/VorteilsrechnerParameterByPath';
+const PERSISTED_QUERY = '/graphql/execute.json/global/VorteilsrechnerParameterByPath';
 // Reused from blocks/content-fragment: publish-side CORS wrapper (demo runs on author/UE).
 const WRAPPER_SERVICE_URL = 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf';
 
@@ -81,7 +81,7 @@ async function fetchParams(cfPath) {
     const response = await fetch(request.url, request.options);
     if (!response.ok) return null;
     const json = await response.json();
-    const item = json?.data?.vorteilsrechnerParameterByPath?.item;
+    const item = json?.data?.vorteilsrechnerparameterByPath?.item;
     if (!item) return null;
     return {
       baseRate: toNumber(item.baseRate, DEFAULTS.baseRate),

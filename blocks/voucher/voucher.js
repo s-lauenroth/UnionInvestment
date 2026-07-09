@@ -18,7 +18,7 @@ import { getMetadata } from '../../scripts/aem.js';
  */
 
 const LEAD_SUBMIT_EVENT = 'union:lead-submitted';
-const PERSISTED_QUERY = '/graphql/execute.json/unioninvestment/VoucherByPath';
+const PERSISTED_QUERY = '/graphql/execute.json/global/VoucherByPath';
 // Reused from blocks/content-fragment: publish-side CORS wrapper (demo runs on author/UE).
 const WRAPPER_SERVICE_URL = 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf';
 
