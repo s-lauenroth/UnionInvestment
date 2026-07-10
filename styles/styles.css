@@ -448,6 +448,11 @@ h6 {
   font-size: var(--heading-font-size-xs);
 }
 
+/* Union Investment: headings in body content use UI-Blau (hero keeps its own colour) */
+main .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--dark-color);
+}
+
 p,
 dl,
 ol,

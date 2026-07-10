@@ -97,7 +97,7 @@
 
 .lead-form-submit {
   width: 100%;
-  background: var(--lf-blue);
+  background: var(--lf-green);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -107,12 +107,12 @@
   font-family: inherit;
   letter-spacing: 0.01em;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.05s ease;
+  transition: filter 0.15s ease, transform 0.05s ease;
 }
 
 .lead-form-submit:disabled {
-  background: var(--lf-green);
-  color: #123;
+  background: var(--lf-blue);
+  color: #fff;
   cursor: default;
 }
 
@@ -122,7 +122,7 @@
 }
 
 .lead-form-submit:hover:not(:disabled) {
-  background: #002a70;
+  filter: brightness(0.93);
 }
 
 .lead-form-submit:active:not(:disabled) {
