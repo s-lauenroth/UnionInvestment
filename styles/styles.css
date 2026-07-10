@@ -38,8 +38,8 @@
   --light-color-opacity: rgba(255, 255, 255, 0.5);
   --tab-background-color: rgba(0, 0, 0, 0.02);
   /* brand-scoped header/footer variables with sensible defaults */
-  --nav-background-color: var(--brand-nav-background-color, #00358e);
-  --nav-text-color: var(--brand-nav-text-color, #ffffff);
+  --nav-background-color: var(--brand-nav-background-color, #ffffff);
+  --nav-text-color: var(--brand-nav-text-color, #00358e);
   --footer-background-color: var(--brand-footer-background-color, #00358e);
   --footer-text-color: var(--brand-footer-text-color, #ffffff);
   
