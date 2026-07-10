@@ -1,107 +1,166 @@
 /*
- * Vorteilsrechner block
- * Colours are exposed as CSS custom properties so MSM live copies
- * (München/Berlin VR blue+orange, Union Investment UI blue+green) can
- * restyle the block via theme classes without touching code.
+ * Vorteilsrechner block — Union Investment brand design.
+ * Consumes the site's semantic brand tokens so it follows the active Brand Theme
+ * (Union Investment UI-Blau/UI-Grün by default, or a Volksbank live-copy theme):
+ *   --dark-color         → UI-Blau  (#00358e)   headings, result, structure
+ *   --main-accent-color  → UI-Grün  (#7ac943)   sliders, accents, "Handshake"
  */
 
 .vorteilsrechner {
-  --vorteilsrechner-accent: var(--brand-theme-color, #0a2f5c);
-  --vorteilsrechner-track: var(--brand-light-color, #e2e6ea);
-  --vorteilsrechner-card-bg: #fafafa;
-  --vorteilsrechner-border: #eee;
-  --vorteilsrechner-muted: #666;
+  --vr-blue: var(--dark-color, #00358e);
+  --vr-green: var(--main-accent-color, #7ac943);
+  --vr-ink: var(--text-color, #1a1a1a);
+  --vr-muted: #5b6470;
+  --vr-line: #dbe2ec;
+  --vr-tint: #eef3f9;
+
+  font-family: var(--body-font-family, 'Helvetica Neue', arial, sans-serif);
 }
 
 .vorteilsrechner-heading {
-  font-size: var(--heading-font-size-xs, 22px);
-  font-weight: 600;
-  margin: 0 0 12px;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--vr-blue);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+/* "Handshake" accent: green underline wedge under the heading */
+.vorteilsrechner-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--vr-green);
 }
 
 .vorteilsrechner-card {
-  background: var(--vorteilsrechner-card-bg);
-  border: 1px solid var(--vorteilsrechner-border);
-  border-radius: 12px;
-  padding: 16px 20px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--vr-line);
+  border-radius: 18px;
+  padding: 28px 28px 24px;
+  box-shadow: 0 10px 30px rgb(0 53 142 / 6%);
+}
+
+/* "Handshake" motif: two interlocking rounded surfaces in the top-right corner */
+.vorteilsrechner-card::before,
+.vorteilsrechner-card::after {
+  content: '';
+  position: absolute;
+  border-radius: 0 18px 0 80%;
+  pointer-events: none;
+}
+
+.vorteilsrechner-card::before {
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: var(--vr-blue);
+  opacity: 0.06;
+}
+
+.vorteilsrechner-card::after {
+  top: 0;
+  right: 0;
+  width: 78px;
+  height: 78px;
+  background: var(--vr-green);
+  opacity: 0.16;
 }
 
 .vorteilsrechner-slider-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 16px;
+  margin-bottom: 22px;
+  position: relative;
 }
 
 .vorteilsrechner-slider-row label {
-  font-size: 14px;
-  color: var(--vorteilsrechner-muted);
-  min-width: 120px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vr-blue);
+  min-width: 130px;
 }
 
 .vorteilsrechner-slider-row .vorteilsrechner-value {
-  font-size: 14px;
-  font-weight: 600;
-  min-width: 90px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--vr-ink);
+  min-width: 96px;
   text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Range input — themed via --vorteilsrechner-accent */
+/* Range input — UI-Grün fill + UI-Blau thumb */
 .vorteilsrechner-slider-row input[type="range"] {
   flex: 1;
   appearance: none;
-  height: 6px;
+  height: 8px;
   border-radius: 999px;
-  background: var(--vorteilsrechner-track);
+  background: var(--vr-tint);
   outline: none;
   cursor: pointer;
 }
 
 .vorteilsrechner-slider-row input[type="range"]::-webkit-slider-thumb {
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: var(--vorteilsrechner-accent);
-  border: 2px solid #fff;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+  background: var(--vr-green);
+  border: 4px solid #fff;
+  box-shadow: 0 2px 6px rgb(0 53 142 / 25%);
 }
 
 .vorteilsrechner-slider-row input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: var(--vorteilsrechner-accent);
-  border: 2px solid #fff;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+  background: var(--vr-green);
+  border: 4px solid #fff;
+  box-shadow: 0 2px 6px rgb(0 53 142 / 25%);
 }
 
 .vorteilsrechner-slider-row input[type="range"]:focus-visible {
-  box-shadow: 0 0 0 3px rgb(10 47 92 / 25%);
+  box-shadow: 0 0 0 4px rgb(122 201 67 / 35%);
 }
 
 .vorteilsrechner-result-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  border-top: 1px solid var(--vorteilsrechner-border);
-  padding-top: 16px;
-  margin-top: 4px;
+  align-items: center;
+  gap: 12px;
+  border-top: 2px solid var(--vr-tint);
+  padding-top: 20px;
+  margin-top: 8px;
 }
 
 .vorteilsrechner-result-label {
-  font-size: 14px;
-  color: var(--vorteilsrechner-muted);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vr-muted);
 }
 
 .vorteilsrechner-result-value {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--vorteilsrechner-accent);
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 800;
+  color: var(--vr-blue);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .vorteilsrechner-teaser {
-  margin: 12px 0 0;
+  margin: 16px 0 0;
   font-size: 13px;
-  color: var(--vorteilsrechner-muted);
+  line-height: 1.4;
+  color: var(--vr-muted);
 }

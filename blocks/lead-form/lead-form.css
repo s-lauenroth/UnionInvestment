@@ -1,27 +1,46 @@
 /*
- * Lead form block
- * Submit button colour is themeable so MSM live copies can match bank CI
- * (VR blue+orange) or Union Investment (UI blue+green).
+ * Lead-Formular block — Union Investment brand design.
+ * Consumes semantic brand tokens so it follows the active Brand Theme:
+ *   --dark-color        → UI-Blau  primary button, headings
+ *   --main-accent-color → UI-Grün  focus / accent
  */
 
 .lead-form {
-  --lead-form-accent: var(--brand-theme-color, #7ac943);
-  --lead-form-accent-text: var(--brand-light-text-color, #173404);
-  --lead-form-border: #ddd;
-  --lead-form-muted: #666;
+  --lf-blue: var(--dark-color, #00358e);
+  --lf-green: var(--main-accent-color, #7ac943);
+  --lf-ink: var(--text-color, #1a1a1a);
+  --lf-muted: #5b6470;
+  --lf-line: #cfd8e6;
+
+  font-family: var(--body-font-family, 'Helvetica Neue', arial, sans-serif);
 }
 
 .lead-form-heading {
-  font-size: var(--heading-font-size-xs, 22px);
-  font-weight: 600;
-  margin: 0 0 12px;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--lf-blue);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.lead-form-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--lf-green);
 }
 
 .lead-form-row-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 8px;
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
 @media (width <= 600px) {
@@ -34,52 +53,76 @@
 .lead-form-form input[type="email"] {
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 12px;
-  border: 1px solid var(--lead-form-border);
-  border-radius: 8px;
-  margin-bottom: 8px;
-  font-size: 15px;
+  padding: 14px 16px;
+  border: 1px solid var(--lf-line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 16px;
   font-family: inherit;
+  color: var(--lf-ink);
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lead-form-form input::placeholder {
+  color: #98a2b3;
 }
 
 .lead-form-form input:focus-visible {
   outline: none;
-  border-color: var(--lead-form-accent);
-  box-shadow: 0 0 0 3px rgb(122 201 67 / 25%);
+  border-color: var(--lf-blue);
+  box-shadow: 0 0 0 4px rgb(122 201 67 / 30%);
 }
 
 .lead-form-checkbox {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--lead-form-muted);
-  margin: 8px 0 16px;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--lf-muted);
+  margin: 6px 0 20px;
   cursor: pointer;
 }
 
 .lead-form-checkbox input[type="checkbox"] {
   margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--lf-green);
+  flex: none;
 }
 
 .lead-form-submit {
   width: 100%;
-  background: var(--lead-form-accent);
-  color: var(--lead-form-accent-text);
+  background: var(--lf-blue);
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 15px;
-  font-weight: 600;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 700;
   font-family: inherit;
+  letter-spacing: 0.01em;
   cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
 }
 
 .lead-form-submit:disabled {
-  opacity: 0.7;
+  background: var(--lf-green);
+  color: #123;
   cursor: default;
 }
 
+.lead-form-submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgb(122 201 67 / 40%);
+}
+
 .lead-form-submit:hover:not(:disabled) {
-  filter: brightness(0.95);
+  background: #002a70;
+}
+
+.lead-form-submit:active:not(:disabled) {
+  transform: translateY(1px);
 }
