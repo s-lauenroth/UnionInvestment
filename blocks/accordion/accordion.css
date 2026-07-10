@@ -1,5 +1,11 @@
+.accordion {
+  max-width: 920px;
+  margin-inline: auto;
+}
+
 .accordion details {
   border: 1px solid #dadada;
+  border-radius: 8px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -13,8 +19,10 @@
 
 .accordion details summary {
   position: relative;
-  padding: 0 16px;
-  padding-right: 46px;
+  padding: 14px 46px 14px 18px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark-color, #00358e);
   cursor: pointer;
   list-style: none;
   overflow: auto;
