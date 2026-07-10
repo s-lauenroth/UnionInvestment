@@ -16,6 +16,8 @@
   --v-card-gradient: linear-gradient(135deg, #ffe58a 0%, #f7a8c4 35%, #c6a2e0 60%, #8fc7e8 100%);
 
   font-family: var(--body-font-family, 'Helvetica Neue', arial, sans-serif);
+  max-width: 920px;
+  margin-inline: auto;
 }
 
 /* Pre-submit hint — light UI-Blau tinted panel with green accent bar */
@@ -109,6 +111,15 @@
 }
 
 /* Details */
+.voucher-details-sender {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--v-green);
+}
+
 .voucher-details h3 {
   font-weight: 700;
   margin: 0 0 4px;

@@ -13,6 +13,8 @@
   --lf-line: #cfd8e6;
 
   font-family: var(--body-font-family, 'Helvetica Neue', arial, sans-serif);
+  max-width: 920px;
+  margin-inline: auto;
 }
 
 .lead-form-heading {

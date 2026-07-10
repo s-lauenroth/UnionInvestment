@@ -29,6 +29,7 @@ const DEFAULTS = {
   exampleCode: 'DM-2026-25069',
   validUntil: '31.12.2026',
   redeemable: 'Filiale & online',
+  senderName: 'Union Investment',
 };
 
 function readField(rows, index, fallback = '') {
@@ -67,6 +68,7 @@ async function fetchVoucher(cfPath) {
       exampleCode: item.exampleCode || DEFAULTS.exampleCode,
       validUntil: item.validUntil || DEFAULTS.validUntil,
       redeemable: item.redeemable || DEFAULTS.redeemable,
+      senderName: item.bankName || DEFAULTS.senderName,
     };
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -88,14 +90,16 @@ function buildRevealedContent(data) {
       </div>
     </div>
     <div class="voucher-details">
+      <p class="voucher-details-sender">Ein Dankeschön von ${data.senderName}</p>
       <h3>Ihr ${data.voucherType}</h3>
-      <p class="voucher-details-sub">Dankeschön für Ihre Anmeldung</p>
+      <p class="voucher-details-sub">Vielen Dank für Ihre Anmeldung zur Warteliste.</p>
       <table>
         <tbody>
           <tr><td class="voucher-details-label">Betrag</td><td class="voucher-details-value">${data.amount},00 €</td></tr>
           <tr><td class="voucher-details-label">Code</td><td class="voucher-details-value">${data.exampleCode}</td></tr>
           <tr><td class="voucher-details-label">Gültig bis</td><td class="voucher-details-value voucher-details-plain">${data.validUntil}</td></tr>
           <tr><td class="voucher-details-label">Einlösbar</td><td class="voucher-details-value voucher-details-plain">${data.redeemable}</td></tr>
+          <tr><td class="voucher-details-label">Ausgestellt von</td><td class="voucher-details-value voucher-details-plain">${data.senderName}</td></tr>
         </tbody>
       </table>
     </div>`;
@@ -114,6 +118,7 @@ export default async function decorate(block) {
     exampleCode: readField(rows, 3, DEFAULTS.exampleCode),
     validUntil: readField(rows, 4, DEFAULTS.validUntil),
     redeemable: readField(rows, 5, DEFAULTS.redeemable),
+    senderName: DEFAULTS.senderName,
   };
 
   block.innerHTML = '';
