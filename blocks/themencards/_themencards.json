@@ -1,0 +1,88 @@
+{
+  "definitions": [
+    {
+      "title": "Themen-Kacheln",
+      "id": "themencards",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Themencards",
+              "filter": "themencards"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Themen-Kachel",
+      "id": "themencard",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Themencard",
+              "model": "themencard"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "themencard",
+      "fields": [
+        {
+          "component": "select",
+          "name": "icon",
+          "label": "Icon",
+          "valueType": "string",
+          "value": "chart",
+          "options": [
+            { "name": "Chart / Fonds", "value": "chart" },
+            { "name": "Schild / Vorsorge", "value": "vorsorge" },
+            { "name": "Sparschwein / Sparen", "value": "sparen" },
+            { "name": "Hand mit Euro / Anlegen", "value": "anlegen" },
+            { "name": "Blatt / Nachhaltigkeit", "value": "nachhaltigkeit" },
+            { "name": "Allgemein", "value": "generic" }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Titel",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "text",
+          "label": "Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "Link-Text",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link-Ziel",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "themencards",
+      "components": [
+        "themencard"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+/*
+ * Themen-Kacheln — solid UI-Blau cards, white line-icons + UI-Grün accents.
+ * Consumes the site's semantic brand tokens so it follows the active Brand Theme.
+ */
+
+.themencards {
+  --tc-blue: var(--dark-color, #00358e);
+  --tc-green: var(--main-accent-color, #7ac943);
+
+  font-family: var(--body-font-family, 'Helvetica Neue', arial, sans-serif);
+  max-width: 1040px;
+  margin-inline: auto;
+}
+
+.themencards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (width <= 900px) {
+  .themencards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 560px) {
+  .themencards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.themencard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--tc-blue);
+  color: #fff;
+  border-radius: 14px;
+  padding: 28px 24px;
+  min-height: 240px;
+}
+
+.themencard-icon {
+  color: #fff;
+  height: 56px;
+}
+
+.themencard-icon svg {
+  width: 56px;
+  height: 56px;
+}
+
+/* UI-Grün accents inside the white line-icons */
+.themencard-icon .tc-accent {
+  stroke: var(--tc-green);
+}
+
+.themencard-icon .tc-accent-fill {
+  fill: var(--tc-green);
+  stroke: none;
+}
+
+.themencard-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.themencard-text {
+  margin: 0;
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.themencard-link {
+  margin-top: auto;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.themencard-link:hover {
+  color: var(--tc-green);
+}

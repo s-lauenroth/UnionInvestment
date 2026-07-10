@@ -34,6 +34,7 @@
       "tabs",
       "teaser",
       "text",
+      "themencards",
       "title",
       "title-block",
       "video",
@@ -45,6 +46,12 @@
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "themencards",
+    "components": [
+      "themencard"
     ]
   },
   {
