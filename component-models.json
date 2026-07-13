@@ -286,6 +286,39 @@
     ]
   },
   {
+    "id": "brand-bar",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "logo",
+        "label": "Logo",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logoAlt",
+        "label": "Logo Alt-Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "bankName",
+        "label": "Bank / Marke",
+        "value": "Ihre Volksbank"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "claim",
+        "label": "Claim (optional)",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

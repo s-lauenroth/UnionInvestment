@@ -340,6 +340,18 @@ body.green-theme {
   --link-hover-color: #10B981;    /* Lighter Mint Green */
 }
 
+/* VR / Volksbanken white-label theme: VR-Blau #005ca9 + Orange #ec6608 */
+body.vr-theme {
+  --brand-nav-background-color: #ffffff;
+  --brand-nav-text-color: #005ca9;
+  --brand-dark-color: #005ca9;
+  --brand-theme-color: #ec6608;
+  --brand-link-color: #005ca9;
+  --brand-link-hover-color: #ec6608;
+  --brand-footer-background-color: #005ca9;
+  --brand-footer-text-color: #ffffff;
+}
+
 .wehealthcare-theme {
   --main-accent-color: #00c4ff;
   --nav-text-color:#000000;

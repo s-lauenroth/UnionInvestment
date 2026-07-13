@@ -79,6 +79,10 @@
             {
               "name": "WeHealthcare Theme",
               "value": "wehealthcare-theme"
+            },
+            {
+              "name": "VR / Volksbank Theme",
+              "value": "vr-theme"
             }
           ]
       },

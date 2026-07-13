@@ -10,6 +10,7 @@
     "components": [
       "accordion",
       "action-button",
+      "brand-bar",
       "button",
       "button",
       "cards",
