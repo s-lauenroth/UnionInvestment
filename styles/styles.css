@@ -340,16 +340,19 @@ body.green-theme {
   --link-hover-color: #10B981;    /* Lighter Mint Green */
 }
 
-/* VR / Volksbanken white-label theme: VR-Blau #005ca9 + Orange #ec6608 */
+/* VR / Volksbanken white-label theme — UI = Blau #00358e + Grün #7ac943,
+   VR = Blau #005ca9 + Orange #ec6608. Set the SEMANTIC tokens directly:
+   overriding the --brand-* intermediates on <body> does not re-resolve the
+   :root tokens (they inherit their already-computed values). */
 body.vr-theme {
-  --brand-nav-background-color: #ffffff;
-  --brand-nav-text-color: #005ca9;
-  --brand-dark-color: #005ca9;
-  --brand-theme-color: #ec6608;
-  --brand-link-color: #005ca9;
-  --brand-link-hover-color: #ec6608;
-  --brand-footer-background-color: #005ca9;
-  --brand-footer-text-color: #ffffff;
+  --dark-color: #005ca9;          /* VR-Blau: headings, structure, tiles */
+  --main-accent-color: #ec6608;   /* VR-Orange: CTA, icon accents, sliders, underlines */
+  --link-color: #005ca9;
+  --link-hover-color: #ec6608;
+  --nav-background-color: #ffffff;
+  --nav-text-color: #005ca9;
+  --footer-background-color: #005ca9;
+  --footer-text-color: #ffffff;
 }
 
 /* White-label VR pages use the in-page brand-bar as their header,

@@ -133,7 +133,7 @@
 }
 
 .vorteilsrechner-slider-row input[type="range"]:focus-visible {
-  box-shadow: 0 0 0 4px rgb(122 201 67 / 35%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--vr-green) 35%, transparent);
 }
 
 .vorteilsrechner-result-row {

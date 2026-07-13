@@ -73,7 +73,7 @@
 .lead-form-form input:focus-visible {
   outline: none;
   border-color: var(--lf-blue);
-  box-shadow: 0 0 0 4px rgb(122 201 67 / 30%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lf-green) 30%, transparent);
 }
 
 .lead-form-checkbox {
@@ -118,7 +118,7 @@
 
 .lead-form-submit:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgb(122 201 67 / 40%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lf-green) 40%, transparent);
 }
 
 .lead-form-submit:hover:not(:disabled) {
