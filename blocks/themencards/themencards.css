@@ -87,3 +87,42 @@
 .themencard-link:hover {
   color: var(--tc-green);
 }
+
+/*
+ * Volksbank white-label variant (vr-theme): light-grey cards with dark text,
+ * VR-blue line-icons + orange accents, and an outlined pill button — mirroring
+ * the card style on the live Volksbanken website. The UI page keeps solid tiles.
+ */
+body.vr-theme .themencard {
+  background: #eef1f5;
+  color: #33383f;
+  border-radius: 10px;
+}
+
+body.vr-theme .themencard-icon {
+  color: var(--tc-blue);
+}
+
+body.vr-theme .themencard-title {
+  color: var(--tc-blue);
+}
+
+body.vr-theme .themencard-text {
+  color: #4a5560;
+}
+
+body.vr-theme .themencard-link {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 10px 22px;
+  border: 1px solid var(--tc-blue);
+  border-radius: 999px;
+  color: var(--tc-blue);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+body.vr-theme .themencard-link:hover {
+  background: var(--tc-blue);
+  color: #fff;
+}
