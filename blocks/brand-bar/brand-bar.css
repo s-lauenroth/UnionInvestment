@@ -10,10 +10,55 @@
 .brand-bar-inner {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
   max-width: 1040px;
   margin-inline: auto;
   padding: 12px 8px;
+}
+
+.brand-bar-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Navigation (right) */
+.brand-bar-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brand-bar-nav a {
+  font-family: var(--body-font-family, 'Helvetica Neue', arial, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nav-text-color, #005ca9);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-bar-nav a:hover {
+  color: var(--main-accent-color, #ec6608);
+  text-decoration: none;
+}
+
+/* suppress the global a::after chevron on nav links */
+.brand-bar-nav a::after {
+  content: none;
+  display: none;
+}
+
+@media (width <= 600px) {
+  .brand-bar-nav ul {
+    gap: 6px 18px;
+  }
 }
 
 .brand-bar-logo img,

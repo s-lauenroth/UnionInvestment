@@ -315,6 +315,13 @@
         "name": "claim",
         "label": "Claim (optional)",
         "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "nav",
+        "label": "Navigation (Liste von Links)",
+        "value": ""
       }
     ]
   },
