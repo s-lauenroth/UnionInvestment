@@ -7,10 +7,12 @@
 
 export default function decorate(block) {
   const rows = [...block.children];
-  const picture = rows[0]?.querySelector('picture, img');
-  const logoAlt = (rows[1]?.textContent || '').trim();
-  const bankName = (rows[2]?.textContent || '').trim();
-  const claim = (rows[3]?.textContent || '').trim();
+  const picture = block.querySelector('picture, img');
+  // The logo's alt is paired with the reference field; the remaining rows are the
+  // text fields in model order (bankName, claim).
+  const textRows = rows.filter((row) => !row.querySelector('picture, img'));
+  const bankName = (textRows[0]?.textContent || '').trim();
+  const claim = (textRows[1]?.textContent || '').trim();
 
   const inner = document.createElement('div');
   inner.className = 'brand-bar-inner';
@@ -18,8 +20,6 @@ export default function decorate(block) {
   if (picture) {
     const logo = document.createElement('span');
     logo.className = 'brand-bar-logo';
-    const img = picture.tagName === 'IMG' ? picture : picture.querySelector('img');
-    if (img && logoAlt) img.alt = logoAlt;
     logo.append(picture);
     inner.append(logo);
   }
