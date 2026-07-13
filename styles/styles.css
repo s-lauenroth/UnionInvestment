@@ -352,6 +352,12 @@ body.vr-theme {
   --brand-footer-text-color: #ffffff;
 }
 
+/* White-label VR pages use the in-page brand-bar as their header,
+   so the shared Union-Investment site nav is hidden here. */
+body.vr-theme header {
+  display: none;
+}
+
 .wehealthcare-theme {
   --main-accent-color: #00c4ff;
   --nav-text-color:#000000;
