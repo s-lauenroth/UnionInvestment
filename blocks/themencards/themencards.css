@@ -88,6 +88,14 @@
   color: var(--tc-green);
 }
 
+/* Keep the label + chevron (global a::after) together on one line, not floated */
+.themencard-link::after {
+  float: none;
+  display: inline-block;
+  width: auto;
+  padding: 0 0 0 6px;
+}
+
 /*
  * Volksbank white-label variant (vr-theme): light-grey cards with dark text,
  * VR-blue line-icons + orange accents, and an outlined pill button — mirroring
@@ -112,17 +120,26 @@ body.vr-theme .themencard-text {
 }
 
 body.vr-theme .themencard-link {
-  align-self: flex-start;
+  align-self: stretch;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   margin-top: 8px;
-  padding: 10px 22px;
+  padding: 11px 16px;
   border: 1px solid var(--tc-blue);
   border-radius: 999px;
   color: var(--tc-blue);
+  font-size: 14px;
+  text-align: center;
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 body.vr-theme .themencard-link:hover {
   background: var(--tc-blue);
+  color: #fff;
+}
+
+body.vr-theme .themencard-link:hover::after {
   color: #fff;
 }
