@@ -303,20 +303,6 @@
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "bankName",
-        "label": "Bank / Marke",
-        "value": "Ihre Volksbank"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "claim",
-        "label": "Claim (optional)",
-        "value": ""
-      },
-      {
         "component": "richtext",
         "valueType": "string",
         "name": "nav",
