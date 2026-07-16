@@ -38,23 +38,15 @@
       {
         "component": "select",
         "name": "theme",
-        "label": "Theme",
+        "label": "Design / Marke",
         "options": [
           {
-            "name": "default",
+            "name": "Union Investment",
             "value": ""
           },
           {
-            "name": "Mango Haze",
-            "value": "mango-haze"
-          },
-          {
-            "name": "Lavender Chill",
-            "value": "lavender-chill"
-          },
-          {
-            "name": "Meadow Light",
-            "value": "meadow-light"
+            "name": "Volksbank",
+            "value": "vr-theme"
           }
         ]
       },
