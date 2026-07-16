@@ -49,20 +49,20 @@
           "value": "Ihr möglicher Vorteil"
         },
         {
-          "component": "number",
+          "component": "text",
           "name": "baseRate",
           "label": "Basiszinssatz (%)",
-          "valueType": "number",
-          "value": 1.5,
-          "description": "Fallback-Wert. Wird vom VorteilsrechnerParameter Content Fragment überschrieben, falls verknüpft."
+          "valueType": "string",
+          "value": "1,5",
+          "description": "Fallback-Wert. Dezimalzahl (Komma oder Punkt), z. B. 1,5. Wird vom VorteilsrechnerParameter Content Fragment überschrieben, falls verknüpft."
         },
         {
-          "component": "number",
+          "component": "text",
           "name": "bonusRate",
           "label": "Bonuszinssatz (%)",
-          "valueType": "number",
-          "value": 0.5,
-          "description": "Fallback-Wert. Wird vom VorteilsrechnerParameter Content Fragment überschrieben, falls verknüpft."
+          "valueType": "string",
+          "value": "0,5",
+          "description": "Fallback-Wert. Dezimalzahl (Komma oder Punkt), z. B. 0,5. Wird vom VorteilsrechnerParameter Content Fragment überschrieben, falls verknüpft."
         },
         {
           "component": "text",
