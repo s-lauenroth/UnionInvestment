@@ -1,7 +1,8 @@
 /*
  * Lead form (waitlist)
  * --------------------
- * Lightweight, no backend. Fields: Vorname, Nachname, E-Mail + Double-Opt-In checkbox.
+ * Lightweight, no backend. Fields: Vorname, Nachname, E-Mail, Bank (optional) +
+ * Double-Opt-In checkbox.
  * On submit the form does NOT send anything — it only dispatches the custom event
  * `union:lead-submitted` on `document`, which the voucher block listens for to reveal
  * the gift card. (Brief: "Formular landet im Nichts.")
@@ -16,6 +17,7 @@ const DEFAULTS = {
   firstNameLabel: 'Vorname',
   lastNameLabel: 'Nachname',
   emailLabel: 'name@beispiel.de',
+  bankLabel: 'Ihre Bank (Name oder BLZ)',
   doiLabel: 'Ich stimme der Kontaktaufnahme zu (Double-Opt-In)',
   submitLabel: 'Absenden',
 };
@@ -34,6 +36,8 @@ export default async function decorate(block) {
     emailLabel: readField(rows, 3, DEFAULTS.emailLabel),
     doiLabel: readField(rows, 4, DEFAULTS.doiLabel),
     submitLabel: readField(rows, 5, DEFAULTS.submitLabel),
+    // bankLabel is last in the model so existing pages (without it) stay aligned.
+    bankLabel: readField(rows, 6, DEFAULTS.bankLabel),
   };
 
   block.innerHTML = '';
@@ -57,6 +61,14 @@ export default async function decorate(block) {
     </div>
     <input type="email" name="email" autocomplete="email"
       placeholder="${config.emailLabel}" aria-label="E-Mail" required>
+    <input type="text" name="bank" list="lead-form-banks" autocomplete="off"
+      placeholder="${config.bankLabel}" aria-label="${config.bankLabel}">
+    <datalist id="lead-form-banks">
+      <option value="Berliner Volksbank"></option>
+      <option value="Frankfurter Volksbank"></option>
+      <option value="VR Bank eG"></option>
+      <option value="Münchner Bank eG"></option>
+    </datalist>
     <label class="lead-form-checkbox">
       <input type="checkbox" name="doi" required>
       <span>${config.doiLabel}</span>
@@ -73,6 +85,7 @@ export default async function decorate(block) {
       firstName: form.elements.firstName.value.trim(),
       lastName: form.elements.lastName.value.trim(),
       email: form.elements.email.value.trim(),
+      bank: form.elements.bank.value.trim(),
       doi: form.elements.doi.checked,
     };
 

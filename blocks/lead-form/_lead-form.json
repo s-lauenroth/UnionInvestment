@@ -62,6 +62,14 @@
           "label": "Button-Text",
           "valueType": "string",
           "value": "Absenden"
+        },
+        {
+          "component": "text",
+          "name": "bankLabel",
+          "label": "Platzhalter Bank",
+          "valueType": "string",
+          "value": "Ihre Bank (Name oder BLZ)",
+          "description": "Optionales Bank-/BLZ-Feld. Am Ende des Models, damit bestehende Seiten stabil bleiben."
         }
       ]
     }
