@@ -1,8 +1,32 @@
-/* Page Data (Tracking) — hidden data-only block. Never rendered; the JS removes
-   it after pushing to window.adobeDataLayer. This rule prevents a flash before the
-   block is decorated. */
+/* Page Data (Tracking) — data-only block. It feeds window.adobeDataLayer and renders
+   nothing on the published page. In the Universal Editor (body.ue-authoring, set by
+   page-data.js) it is revealed as a compact card so authors can select it and edit the
+   tracking fields. */
+
 .page-data,
-main .section:has(> .page-data-wrapper),
 .page-data-wrapper {
-  display: none !important;
+  display: none;
+}
+
+main .section:has(.page-data-wrapper) {
+  display: none;
+}
+
+/* Universal Editor: reveal the block + its section for authoring. */
+body.ue-authoring .page-data,
+body.ue-authoring .page-data-wrapper,
+body.ue-authoring main .section:has(.page-data-wrapper) {
+  display: block;
+}
+
+body.ue-authoring .page-data--editor {
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 12px 16px;
+  border: 1px dashed #90a4c4;
+  border-radius: 6px;
+  background: #f5f7fa;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #33475b;
 }
