@@ -63,6 +63,41 @@
         "name": "pageCategory",
         "label": "Page Category",
         "required": true
+      },
+      {
+        "component": "tab",
+        "label": "Tracking",
+        "name": "tab-tracking"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingPageName",
+        "label": "Tracking Page Name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingSection",
+        "label": "Tracking Section"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingLocale",
+        "label": "Tracking Locale"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingCampaign",
+        "label": "Tracking Campaign"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingTemplate",
+        "label": "Tracking Template"
       }
     ]
   },
