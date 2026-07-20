@@ -1,0 +1,62 @@
+{
+  "definitions": [
+    {
+      "title": "Page Data (Tracking)",
+      "id": "page-data",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Page-Data",
+              "model": "page-data"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "page-data",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "trackingPageName",
+          "label": "Tracking Page Name",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "trackingSection",
+          "label": "Tracking Section",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "trackingLocale",
+          "label": "Tracking Locale",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "trackingCampaign",
+          "label": "Tracking Campaign",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "trackingTemplate",
+          "label": "Tracking Template",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

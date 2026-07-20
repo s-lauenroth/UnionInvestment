@@ -887,6 +887,21 @@
           }
         },
         {
+          "title": "Page Data (Tracking)",
+          "id": "page-data",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Page-Data",
+                  "model": "page-data"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Promotion",
           "id": "promotion",
           "plugins": {

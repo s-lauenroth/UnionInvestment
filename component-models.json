@@ -63,41 +63,6 @@
         "name": "pageCategory",
         "label": "Page Category",
         "required": true
-      },
-      {
-        "component": "tab",
-        "label": "Tracking",
-        "name": "tab-tracking"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "trackingPageName",
-        "label": "Tracking Page Name"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "trackingSection",
-        "label": "Tracking Section"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "trackingLocale",
-        "label": "Tracking Locale"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "trackingCampaign",
-        "label": "Tracking Campaign"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "trackingTemplate",
-        "label": "Tracking Template"
       }
     ]
   },
@@ -6211,6 +6176,46 @@
         "valueType": "string",
         "value": "Ihre Bank (Name oder BLZ)",
         "description": "Optionales Bank-/BLZ-Feld. Am Ende des Models, damit bestehende Seiten stabil bleiben."
+      }
+    ]
+  },
+  {
+    "id": "page-data",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingPageName",
+        "label": "Tracking Page Name",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingSection",
+        "label": "Tracking Section",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingLocale",
+        "label": "Tracking Locale",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingCampaign",
+        "label": "Tracking Campaign",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "trackingTemplate",
+        "label": "Tracking Template",
+        "value": ""
       }
     ]
   },

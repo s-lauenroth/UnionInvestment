@@ -1,0 +1,8 @@
+/* Page Data (Tracking) — hidden data-only block. Never rendered; the JS removes
+   it after pushing to window.adobeDataLayer. This rule prevents a flash before the
+   block is decorated. */
+.page-data,
+main .section:has(> .page-data-wrapper),
+.page-data-wrapper {
+  display: none !important;
+}
