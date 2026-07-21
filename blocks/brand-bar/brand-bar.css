@@ -14,12 +14,9 @@
   box-shadow: 0 1px 6px rgb(0 53 142 / 8%);
 }
 
-/* The brand-bar is the header for Volksbank (vr-theme) pages only. On Union
-   Investment pages the global site nav is shown instead, so hide it there to
-   avoid two stacked headers. */
-body:not(.vr-theme) .brand-bar {
-  display: none;
-}
+/* The brand-bar is the in-page header for blueprint pages (both Union Investment and
+   Volksbank / vr-theme). It follows the active theme's colours. The shared site nav is
+   hidden on any page that has a brand-bar (see styles.css) to avoid two headers. */
 
 /* The fixed brand-bar is out of flow — collapse its now-empty section so no
    white strip remains above the hero. */

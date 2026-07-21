@@ -355,9 +355,10 @@ body.vr-theme {
   --footer-text-color: #ffffff;
 }
 
-/* White-label VR pages use the in-page brand-bar as their header,
-   so the shared Union-Investment site nav is hidden here. */
-body.vr-theme header {
+/* Blueprint pages carry their own header via the in-page brand-bar block (UI or VB
+   branding). Whenever a brand-bar is present, hide the shared site nav to avoid two
+   stacked headers. Regular pages without a brand-bar keep the global site nav. */
+body:has(.brand-bar) header {
   display: none;
 }
 
